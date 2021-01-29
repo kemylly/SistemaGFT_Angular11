@@ -1,0 +1,30 @@
+<br/>
+<div class="container-sm">
+    <div>
+        <h1> <i class="fa fa-image"></i> Fotos</h1>
+    </div>
+    <br/>
+
+    <!--Incio do card-->
+        <div class="row">
+            <div *ngFor="let photo of photos | paginate: { itemsPerPage: contador, currentPage: pag }" class="card quad" style="width: 18rem;">
+                <img class="card-img-top imagem" src="{{ photo.thumbnailUrl }}" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <p class="card-text titulo">{{ photo.title }}</p>
+                </div>
+            </div> 
+        </div>
+    <!--Fim do card-->
+
+    <!--botoes de paginação-->
+    <nav aria-label="Page navigation example col-md-12">
+        <div class="paginacao d-flex justify-content-center">
+          <pagination-controls (pageChange)="handlePageChange($event)"
+          responsive="true"
+          previousLabel="Anterior"
+          nextLabel="Proximo"></pagination-controls>
+        </div>
+      </nav>
+      <br/>
+      <br/>
+</div>

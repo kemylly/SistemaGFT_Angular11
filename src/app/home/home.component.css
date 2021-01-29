@@ -1,0 +1,12 @@
+.seta{
+    max-width: 100px;
+    max-height: max-content;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.seta:hover {
+    -webkit-transform: rotateZ(-360deg) ;
+    transform: rotateZ(-360deg) ;
+    z-index: 10;
+}

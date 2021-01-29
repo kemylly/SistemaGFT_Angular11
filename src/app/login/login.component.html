@@ -1,0 +1,70 @@
+<div>
+    <section class="login-block">
+        <section class="container">
+            <div class="row">
+                <div class="col-md-4 login-sec">
+                    <h2 class="text-center">Login</h2>
+                    <form class="needs-validation">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="fw-bolder"> Email <i class="fa fa-user"></i></label>
+                            <input id="key" type="text" class="form-control" placeholder="email@gft.com" required>
+                            <!-- <div class="invalid-feedback">
+                                Voce deve digitar um email valido
+                              </div> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" class="fw-bolder">Senha <i class="fa fa-lock"></i></label>
+                            <input id="value" type="password" class="form-control" required>
+                        </div>
+                        <!-- <div class="invalid-feedback">
+                            Tudo certo!
+                          </div> -->
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input">
+                                    <small>Me lembre</small>
+                                </label>
+                            </div>
+                            <br/>
+                            <div class="d-flex justify-content-center">
+                                <button id="btnAdd" value="Add Storage" type="submit" class="btn btn-login">Logar</button>    
+                            </div>
+                        </div>
+                        <h3>Conteúdo do Local Storage:</h3>
+                        <span id="conteudo"></span>
+                    </form>
+
+                    <div class="copy-text fs-5 text-decoration-underline blockquote">Esqueceu a senha?</div>
+
+                </div>
+                <div class="col-md-8 banner-sec">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img class="d-block img-fluid banner" src="./assets/ValoresGFT.png" alt="Img Valores da GFT">
+                            </div>
+                        </div>	      
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
+
+<!-- <script src="./login.component.js"></script> -->
+<script> 
+(function (){
+    'use strict';
+  
+    var btnSetItem = document.querySelector('.btnSetItem')
+  
+    function setLocalStorage(){
+       btnSetItem.addEventListener('click', () => {
+        localStorage.setItem('nome','Jack Sparrow')
+      })
+    }
+    setLocalStorage()
+  
+  }());
+  </script>

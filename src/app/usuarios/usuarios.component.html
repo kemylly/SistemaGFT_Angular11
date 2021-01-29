@@ -1,0 +1,58 @@
+<br/>
+
+<section class="container">
+  <div>
+    <h1><i class="fa fa-users"></i> Usuarios</h1>
+  </div>
+  <br/>
+  <div class="table-responsive col-md-12">
+    <!--Barra de pesquisa-->
+    <input class="form-control" type="text" placeholder="Pesquisar.."[(ngModel)]="title" />
+    <br/>
+    <!--inicio da tabela-->
+      <table  class="table table-hover border align-middle ">
+          <thead>
+            <tr>
+              <th scope="col" (click)="sort('name')">Nome  <i class="fa fa-chevron-circle-up icon"></i> <i class="fa fa-chevron-circle-down icon"></i> </th>
+              <th scope="col" (click)="sort('username')" >UserName <i class="fa fa-chevron-circle-up icon"></i> <i class="fa fa-chevron-circle-down icon"></i> </th>
+              <th scope="col" (click)="sort('email')">Email <i class="fa fa-chevron-circle-up icon"></i> <i class="fa fa-chevron-circle-down icon"></i> </th>
+              <th scope="col">Ver Mais <i class="fa fa-info-circle icon"></i></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users | filter: title | orderBy: key : reverse | paginate: { itemsPerPage: contador, currentPage: pag }; let i = index">
+              <td scope="row">{{ user.name }}</td>
+              <td>{{ user.username }}</td>
+              <td>{{ user.email }}</td>
+              <td>
+                <!-- Button modal -->
+                <button class="btn busca" data-toggle="modal" data-target="#meuModal">
+                  <i class="fa fa-search icone"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Fim da tabela -->
+  </div>
+  <nav aria-label="Page navigation example col-md-12">
+    <div class=" paginacao d-flex justify-content-center">
+      <pagination-controls (pageChange)="handlePageChange($event)"
+      responsive="true"
+      previousLabel="Anterior"
+      nextLabel="Proximo"></pagination-controls>
+    </div>
+  </nav>
+</section>
+
+
+
+
+ <!-- Modal -->
+<div class="meuModal" id="modalVerMais" tabindex="-1" role="dialog">
+  <a href="#fechar" title="Fechar" class="fechar">x</a>
+  <h2>Janela Modal</h2>
+  <p>Esta é uma simples janela de modal.</p>
+  <p>Você pode fazer qualquer coisa aqui, página de Login, pop-ups, ou formulários</p>
+</div>
+

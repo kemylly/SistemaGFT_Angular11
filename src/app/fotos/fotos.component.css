@@ -1,0 +1,19 @@
+.quad{
+    background-color: #E8E8E8;
+    margin: 0 20px 20px 0;
+    padding: 0 0;
+    box-shadow: 10px 5px 3px #E8E8E8;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.quad:hover {
+    -webkit-transform: rotateZ(-360deg) scale(1.3);
+    transform: rotateZ(-360deg) scale(1.3);
+    /* border-radius: 50%; */
+    z-index: 10;
+    box-shadow: 0 0 0;
+}
+
+.imagem{
+    width: 100%;
+}
